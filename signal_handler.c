@@ -4,15 +4,15 @@
  */
 
 /**
- * Modified by:
+ * Modified by: Benjamin Jankowski
  * 
  * Brief summary of modifications:
+ * Removed the exit statement in handle_signal to observe new behavior
  */
 
 
 #include <signal.h>
 #include <unistd.h>
-#include <stdlib.h>
 #include <stdio.h>
 
 /**
@@ -20,7 +20,7 @@
  */
 void handle_signal() {
     printf("Received a signal\n");
-    exit(1);
+    // exit(1);
 }
 
 int main() {
