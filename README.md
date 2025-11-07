@@ -146,3 +146,8 @@ and details like masks and flags. Then `sigaction` can be called similar to `sig
 Then `kill -s SIGUSR1 pid` can be used to send a signal.
 
 ### Part 5
+Sending data in a signal with `sigqueue` is similar to using `sigaction` for sending signals
+however its mor simple. Instead of a struct passed in, it simply takes a signal id and a
+`sigval` to send with the signal. Then for the receiving side it's using `sigaction` as before.
+It should also be noted that for this example an int was used, however `sigval` is a union that also
+allows for a pointer to be sent which could be much more powerful and allow for much more data to be sent.
